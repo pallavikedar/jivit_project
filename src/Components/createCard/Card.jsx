@@ -7,6 +7,7 @@ import back from '../../Assets/card/back.png';
 import JMS from '../../Assets/card/image (2).png'
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { Base_url } from '../../config/Config';
 
 function Card() {
     const [data, setData] = useState({});
@@ -18,7 +19,7 @@ function Card() {
         async function getData() {
             const token = localStorage.getItem('token');
             try {
-                let url = `http://localhost:8080/api/benificiaries/${params.id}`;
+                let url = `${Base_url}/api/benificiaries/${params.id}`;
                 //   let url = `http//localhost/api/benificiaries/${params.id}`;${process.env.REACT_APP_API_KEY}
 
 

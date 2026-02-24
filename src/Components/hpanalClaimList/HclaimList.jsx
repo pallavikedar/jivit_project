@@ -216,6 +216,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./Hclaimlist.css"
+import { Base_url } from '../../config/Config';
 const ClaimDetailModal = ({ claim, onClose }) => {
     if (!claim) return null;
 
@@ -297,7 +298,7 @@ const DischargeModal = ({ claimId, onClose }) => {
         formData.append('dischargecard', dischargeCard);
 
         try {
-            const response = await fetch(`https://jivithealthcare.in/api/updateCleamRequest/${claimId}`, {
+            const response = await fetch(`${Base_url}in/api/updateCleamRequest/${claimId}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -380,7 +381,7 @@ const HclaimList = () => {
             }
 
             try {
-                let url = `https://jivithealthcare.in/api/hospitalCleamRequests`;
+                let url = `${Base_url}in/api/hospitalCleamRequests`;
                 //let url = `http://localhost:8080/hospitalCleamRequests`;
 
                 let response = await fetch(url, {

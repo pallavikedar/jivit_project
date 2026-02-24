@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './ClaimFrom.css';
+import { Base_url } from "../../config/Config";
 
 const ClaimRequestForm = () => {
   const [employeeName, setEmployeeName] = useState("");
@@ -99,7 +100,7 @@ const ClaimRequestForm = () => {
       const token = localStorage.getItem("jwtToken");
       console.log(token)
       const response = await fetch(
-        `https://jivithealthcare.in/api/createCleamRequest`,
+        `${Base_url}in/api/createCleamRequest`,
         {
           method: "POST",
           headers: {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Base_url } from '../../config/Config';
 function Tickets() {
     const [data, setData] = useState([]);
     const token = localStorage.getItem('token');
@@ -7,7 +7,7 @@ function Tickets() {
     useEffect(() => {
         async function getData() {
             try { 
-                let url = `https://jivithealthcare.in/api/RaiseTicketInfo`;
+                let url = `${Base_url}in/api/RaiseTicketInfo`;
                 
                 let response = await fetch(url, {
                     method: 'GET', 

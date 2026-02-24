@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Base_url } from '../../config/Config';
 function PaymentList() {
     const [data, setData] = useState([]);
 
@@ -6,7 +7,7 @@ function PaymentList() {
         async function getData() {
             const token = localStorage.getItem('token');
             try { 
-                let url = `https://jivithealthcare.in/api/getAllHospitalPayments`;
+                let url = `${Base_url}in/api/getAllHospitalPayments`;
                 
                 let response = await fetch(url, {
                     method: 'GET', 
@@ -37,7 +38,7 @@ console.log(data)
 
     const updateStatus = async (id, status) => {
         try {
-            let url = `https://jivithealthcare.in/api/customer/${id}/status`;
+            let url = `${Base_url}in/api/customer/${id}/status`;
             let response = await fetch(url, {
                 method: 'PATCH',
                 headers: {

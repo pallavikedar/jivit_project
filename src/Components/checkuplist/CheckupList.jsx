@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import { Base_url } from '../../config/Config';
 function CheckupList() {
     const [data, setData] = useState([]); 
     const [filteredData, setFilteredData] = useState([]); 
@@ -16,7 +16,7 @@ function CheckupList() {
             }
 
             try {
-               let url = `https://jivithealthcare.in/api/hospitalHeathCheckupList`;
+               let url = `${Base_url}in/api/hospitalHeathCheckupList`;
           //   let url = `http://localhost:8080/api/hospitalHeathCheckupList`;
                 let response = await fetch(url, {
                     method: 'GET',

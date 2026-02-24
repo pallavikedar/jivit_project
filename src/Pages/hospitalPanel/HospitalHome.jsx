@@ -3,6 +3,7 @@ import './Home.css';
 import { Link, Outlet } from 'react-router-dom';
 import logo from '../../Assets/jivit-logo.svg'
 import { FaDownload } from 'react-icons/fa';
+import { Base_url } from '../../config/Config';
 
 const HospitalHome = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -32,7 +33,7 @@ const HospitalHome = () => {
     }
 
     try {
-      const response = await fetch(`https://jivithealthcare.in/api/tecketRaise`, {
+      const response = await fetch(`${Base_url}/api/tecketRaise`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

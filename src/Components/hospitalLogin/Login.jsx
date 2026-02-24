@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import { Base_url } from '../../config/Config';
 const OtpForm = () => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
@@ -25,7 +25,7 @@ const navigate = useNavigate()
     setMessage('');
 
     try {
-      const response = await axios.post(`https://jivithealthcare.in/api/send-otp`, null, {
+      const response = await axios.post(`${Base_url}in/api/send-otp`, null, {
         params: { email: email },
       });
       setMessage(response.data);  
@@ -48,7 +48,7 @@ const navigate = useNavigate()
     setMessage('');
 
     try {
-      const response = await axios.post(`https://jivithealthcare.in/api/validate-otp`, null, {
+      const response = await axios.post(`${Base_url}in/api/validate-otp`, null, {
         params: { email: email, otp: otp },
       });
       setMessage(`Success! Token: ${response.data.jwtToken}`); 

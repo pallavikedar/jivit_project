@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-
+import { Base_url } from '../config/Config';
 const ClaimDetailModal = ({ claim, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  
 
   if (!claim) return null;
 
@@ -46,7 +47,7 @@ const ClaimDetailModal = ({ claim, onClose }) => {
             <p><strong>Documents:</strong></p>
             {[
               { label: 'Aadhar', src: `https://82.112.237.134:8080/${claim.aadharCard}` },
-              { label: 'Promissory', src: `https://jivithealthcare.in/api/${claim.promissoryNote}` },
+              { label: 'Promissory', src: `${Base_url}in/api/${claim.promissoryNote}` },
               { label: 'Jivat Card', src: claim.jivatHealthCard },
               { label: 'Salary Cheque', src: claim.salaryACCheque },
               { label: 'Discharge', src: claim.dischargecard },
@@ -100,8 +101,8 @@ const CleamRequestList = () => {
   useEffect(() => {
     const fetchCleamRequests = async () => {
       try {
-        // let response = await fetch(`https://jivithealthcare.in/api/adminCleamRequests`, {
-         let response = await fetch(`http://localhost:8080/api/adminCleamRequests`, {
+        // let response = await fetch(`${Base_url}in/api/adminCleamRequests`, {
+         let response = await fetch(`${Base_url}/api/adminCleamRequests`, {
 
           method: 'GET',
           headers: {
@@ -127,7 +128,7 @@ const CleamRequestList = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      let url = `https://jivithealthcare.in/api/updateStatusAuthorized/${id}`;
+      let url = `${Base_url}in/api/updateStatusAuthorized/${id}`;
       let response = await fetch(url, {
         method: 'PUT',
         headers: {
@@ -154,7 +155,7 @@ const CleamRequestList = () => {
 
   const updateStatusreject = async (id, status) => {
     try {
-      let url = `https://jivithealthcare.in/api/updateStatusRejected/${id}`;
+      let url = `${Base_url}in/api/updateStatusRejected/${id}`;
       let response = await fetch(url, {
         method: 'PUT',
         headers: {

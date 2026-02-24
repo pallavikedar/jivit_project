@@ -246,6 +246,7 @@ import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import logo from '../../Assets/jivit-logo.svg';
 import { useParams } from 'react-router-dom';
+import { Base_url } from '../../config/Config';
 
 const CompleteMedicalAuthPDF = () => {
   const [data1, setData1] = useState([]);
@@ -256,7 +257,7 @@ const CompleteMedicalAuthPDF = () => {
   useEffect(() => {
     async function getData() {
       try {
-        let url = `https://jivithealthcare.in/api/cleamRequest/${id}`;
+        let url = `${Base_url}in/api/cleamRequest/${id}`;
         let response = await fetch(url, {
           method: 'GET',
           headers: {

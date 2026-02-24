@@ -1,7 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-
+import { Base_url } from '../../config/Config';
 const AppointmentTable = () => {
     const [appointments, setAppointments] = useState([]);
 
@@ -10,7 +10,7 @@ const AppointmentTable = () => {
             const token = localStorage.getItem('token'); 
 
             try {
-                const response = await fetch(`https://jivithealthcare.in/api/Allappointment`, {
+                const response = await fetch(`${Base_url}in/api/Allappointment`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`, 
@@ -43,7 +43,7 @@ console.log(process.env.REACT_APP_API_KEY)
                 )
             );
 
-            let url = `https://jivithealthcare.in/api/AppoinmentStatusAuthorized/${id}`;
+            let url = `${Base_url}in/api/AppoinmentStatusAuthorized/${id}`;
             let response = await fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -76,7 +76,7 @@ console.log(process.env.REACT_APP_API_KEY)
                 )
             );
 
-            let url = `https://jivithealthcare.in/api/AppoinmentStatusReject/${id}`;
+            let url = `${Base_url}in/api/AppoinmentStatusReject/${id}`;
             let response = await fetch(url, {
                 method: 'PUT',
                 headers: {

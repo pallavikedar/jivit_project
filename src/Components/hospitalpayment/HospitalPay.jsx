@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
-
+import { Base_url } from '../../config/Config';
 const HospitalPay = () => {
   const [hospitalList, setHospitalList] = useState([]);
   const [selectedHospital, setSelectedHospital] = useState(null);
@@ -26,7 +26,7 @@ const HospitalPay = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`https://jivithealthcare.in/api/AllhospitalsList`);
+        const response = await fetch(`${Base_url}in/api/AllhospitalsList`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -83,7 +83,7 @@ const HospitalPay = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`https://jivithealthcare.in/api/addHospitalPayment`, {
+      const response = await fetch(`${Base_url}in/api/addHospitalPayment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
-
+import { Base_url } from '../../config/Config';
 function AllHospitalList() {
     const [data, setData] = useState([]);
     const tableRef = useRef(); // Reference to the table for generating PDF
@@ -9,7 +9,7 @@ function AllHospitalList() {
     useEffect(() => {
         async function getData() {
             try {
-                let url = `https://jivithealthcare.in/api/AllhospitalsList`;
+                let url = `${Base_url}in/api/AllhospitalsList`;
 
                 let response = await fetch(url, {
                     method: 'GET',

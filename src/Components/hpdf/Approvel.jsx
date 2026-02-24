@@ -4,7 +4,7 @@ import './pdf.css';
 import 'jspdf-autotable'; // Optional for better table formatting
 import signatureImage from '../../Assets/card/digital.png'; // Path to your signature image
 import { useParams } from 'react-router-dom';
-
+import { Base_url } from '../../config/Config';
 const Approvel = () => {
   const [data, setData] = useState({});
   const { id } = useParams();
@@ -14,7 +14,7 @@ const Approvel = () => {
   useEffect(() => {
     async function getData() {
       try {
-        let url = `https://jivithealthcare.in/api/cleamRequest/${id}`;
+        let url = `${Base_url}in/api/cleamRequest/${id}`;
         let response = await fetch(url, {
           method: 'GET',
           headers: {
