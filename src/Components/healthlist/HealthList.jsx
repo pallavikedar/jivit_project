@@ -50,7 +50,7 @@ const HealthList = () => {
     const fetchCleamRequests = async () => {
       const token = localStorage.getItem('token');
       try {
-        let response = await fetch(`${Base_url}in/api/adminHeathCheckupList`, {
+        let response = await fetch(`${Base_url}/api/adminHeathCheckupList`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -84,7 +84,7 @@ const HealthList = () => {
         )
       );
 
-      let url = `${Base_url}in/api/healthCheckupAuthorized/${id}`;
+      let url = `${Base_url}/api/healthCheckupAuthorized/${id}`;
       let response = await fetch(url, {
         method: 'PUT',
         headers: {
@@ -115,7 +115,7 @@ const HealthList = () => {
         )
       );
 
-      let url = `${Base_url}in/api/healthCheckupRejected/${id}`;
+      let url = `${Base_url}/api/healthCheckupRejected/${id}`;
       let response = await fetch(url, {
         method: 'PUT',
         headers: {

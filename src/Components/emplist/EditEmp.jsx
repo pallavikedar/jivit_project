@@ -31,7 +31,7 @@ function EditBeneficiary() {
     useEffect(() => {
         async function fetchBeneficiary() {
             try {
-                let url = `${Base_url}in/api/benificiaries/${id}`;
+                let url = `${Base_url}/api/benificiaries/${id}`;
                 let response = await fetch(url, {
                     method: 'GET',
                     headers: {
@@ -94,7 +94,7 @@ function EditBeneficiary() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            let url = `${Base_url}in/api/updateBenificiary/${id}`;
+            let url = `${Base_url}/api/updateBenificiary/${id}`;
             let response = await fetch(url, {
                 method: 'PUT',
                 headers: {

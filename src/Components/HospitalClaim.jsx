@@ -47,7 +47,7 @@ const ClaimDetailModal = ({ claim, onClose }) => {
             <p><strong>Documents:</strong></p>
             {[
               { label: 'Aadhar', src: `https://82.112.237.134:8080/${claim.aadharCard}` },
-              { label: 'Promissory', src: `${Base_url}in/api/${claim.promissoryNote}` },
+              { label: 'Promissory', src: `${Base_url}/api/${claim.promissoryNote}` },
               { label: 'Jivat Card', src: claim.jivatHealthCard },
               { label: 'Salary Cheque', src: claim.salaryACCheque },
               { label: 'Discharge', src: claim.dischargecard },
@@ -101,7 +101,7 @@ const CleamRequestList = () => {
   useEffect(() => {
     const fetchCleamRequests = async () => {
       try {
-        // let response = await fetch(`${Base_url}in/api/adminCleamRequests`, {
+        // let response = await fetch(`${Base_url}/api/adminCleamRequests`, {
          let response = await fetch(`${Base_url}/api/adminCleamRequests`, {
 
           method: 'GET',
@@ -128,7 +128,7 @@ const CleamRequestList = () => {
 
   const updateStatus = async (id, status) => {
     try {
-      let url = `${Base_url}in/api/updateStatusAuthorized/${id}`;
+      let url = `${Base_url}/api/updateStatusAuthorized/${id}`;
       let response = await fetch(url, {
         method: 'PUT',
         headers: {
@@ -155,7 +155,7 @@ const CleamRequestList = () => {
 
   const updateStatusreject = async (id, status) => {
     try {
-      let url = `${Base_url}in/api/updateStatusRejected/${id}`;
+      let url = `${Base_url}/api/updateStatusRejected/${id}`;
       let response = await fetch(url, {
         method: 'PUT',
         headers: {

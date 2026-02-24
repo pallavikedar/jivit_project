@@ -26,7 +26,7 @@ const HospitalPay = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`${Base_url}in/api/AllhospitalsList`);
+        const response = await fetch(`${Base_url}/api/AllhospitalsList`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -83,7 +83,7 @@ const HospitalPay = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${Base_url}in/api/addHospitalPayment`, {
+      const response = await fetch(`${Base_url}/api/addHospitalPayment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

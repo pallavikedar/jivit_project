@@ -16,7 +16,7 @@ function CheckupList() {
             }
 
             try {
-               let url = `${Base_url}in/api/hospitalHeathCheckupList`;
+               let url = `${Base_url}/api/hospitalHeathCheckupList`;
           //   let url = `http://localhost:8080/api/hospitalHeathCheckupList`;
                 let response = await fetch(url, {
                     method: 'GET',

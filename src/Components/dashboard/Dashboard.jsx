@@ -18,7 +18,7 @@ function Dashboard() {
     const fetchCleamRequests = async () => {
       const token = localStorage.getItem('token');
       try {
-        let response = await fetch(`${Base_url}in/api/adminHeathCheckupList`, {
+        let response = await fetch(`${Base_url}/api/adminHeathCheckupList`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -51,7 +51,7 @@ function Dashboard() {
     async function getData() {
         const token = localStorage.getItem('token');
         try {
-            let url = `${Base_url}in/api/benificiaries`;
+            let url = `${Base_url}/api/benificiaries`;
 
             let response = await fetch(url, {
                 method: 'GET',

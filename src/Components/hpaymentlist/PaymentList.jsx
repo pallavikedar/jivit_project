@@ -7,7 +7,7 @@ function PaymentList() {
         async function getData() {
             const token = localStorage.getItem('token');
             try { 
-                let url = `${Base_url}in/api/getAllHospitalPayments`;
+                let url = `${Base_url}/api/getAllHospitalPayments`;
                 
                 let response = await fetch(url, {
                     method: 'GET', 
@@ -38,7 +38,7 @@ console.log(data)
 
     const updateStatus = async (id, status) => {
         try {
-            let url = `${Base_url}in/api/customer/${id}/status`;
+            let url = `${Base_url}/api/customer/${id}/status`;
             let response = await fetch(url, {
                 method: 'PATCH',
                 headers: {

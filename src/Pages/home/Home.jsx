@@ -57,7 +57,7 @@ function Home() {
             console.log('Form submitted:', formData);
             
             // Make a POST request using fetch
-            const response = await fetch(`${Base_url}in/api/appointment`, {
+            const response = await fetch(`${Base_url}/api/appointment`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

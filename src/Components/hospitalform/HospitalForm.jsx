@@ -22,7 +22,7 @@ const HospitalComponent = () => {
     remark: ''
   });
 
-  let url = `${Base_url}in/api/addHospital`
+  let url = `${Base_url}/api/addHospital`
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +37,7 @@ const HospitalComponent = () => {
     e.preventDefault();
     
     try { 
-      const response = await fetch(`${Base_url}in/api/addHospital`, {
+      const response = await fetch(`${Base_url}/api/addHospital`, {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

@@ -31,7 +31,7 @@ const HealthCheckupForm = () => {
 
     try {
       const response = await fetch(
-         `${Base_url}in/api/healthCheckupReqest`,
+         `${Base_url}/api/healthCheckupReqest`,
         //`http://localhost:8080/healthCheckupReqest`,
 
         {

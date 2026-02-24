@@ -298,7 +298,7 @@ const DischargeModal = ({ claimId, onClose }) => {
         formData.append('dischargecard', dischargeCard);
 
         try {
-            const response = await fetch(`${Base_url}in/api/updateCleamRequest/${claimId}`, {
+            const response = await fetch(`${Base_url}/api/updateCleamRequest/${claimId}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -381,7 +381,7 @@ const HclaimList = () => {
             }
 
             try {
-                let url = `${Base_url}in/api/hospitalCleamRequests`;
+                let url = `${Base_url}/api/hospitalCleamRequests`;
                 //let url = `http://localhost:8080/hospitalCleamRequests`;
 
                 let response = await fetch(url, {

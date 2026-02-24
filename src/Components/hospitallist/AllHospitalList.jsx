@@ -9,7 +9,7 @@ function AllHospitalList() {
     useEffect(() => {
         async function getData() {
             try {
-                let url = `${Base_url}in/api/AllhospitalsList`;
+                let url = `${Base_url}/api/AllhospitalsList`;
 
                 let response = await fetch(url, {
                     method: 'GET',

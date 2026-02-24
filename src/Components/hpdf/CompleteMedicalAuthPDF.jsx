@@ -257,7 +257,7 @@ const CompleteMedicalAuthPDF = () => {
   useEffect(() => {
     async function getData() {
       try {
-        let url = `${Base_url}in/api/cleamRequest/${id}`;
+        let url = `${Base_url}/api/cleamRequest/${id}`;
         let response = await fetch(url, {
           method: 'GET',
           headers: {

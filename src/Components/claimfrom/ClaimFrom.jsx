@@ -100,7 +100,7 @@ const ClaimRequestForm = () => {
       const token = localStorage.getItem("jwtToken");
       console.log(token)
       const response = await fetch(
-        `${Base_url}in/api/createCleamRequest`,
+        `${Base_url}/api/createCleamRequest`,
         {
           method: "POST",
           headers: {

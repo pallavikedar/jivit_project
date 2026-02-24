@@ -25,7 +25,7 @@ const navigate = useNavigate()
     setMessage('');
 
     try {
-      const response = await axios.post(`${Base_url}in/api/send-otp`, null, {
+      const response = await axios.post(`${Base_url}/api/send-otp`, null, {
         params: { email: email },
       });
       setMessage(response.data);  
@@ -48,7 +48,7 @@ const navigate = useNavigate()
     setMessage('');
 
     try {
-      const response = await axios.post(`${Base_url}in/api/validate-otp`, null, {
+      const response = await axios.post(`${Base_url}/api/validate-otp`, null, {
         params: { email: email, otp: otp },
       });
       setMessage(`Success! Token: ${response.data.jwtToken}`); 

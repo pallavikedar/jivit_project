@@ -7,7 +7,7 @@ function Tickets() {
     useEffect(() => {
         async function getData() {
             try { 
-                let url = `${Base_url}in/api/RaiseTicketInfo`;
+                let url = `${Base_url}/api/RaiseTicketInfo`;
                 
                 let response = await fetch(url, {
                     method: 'GET', 

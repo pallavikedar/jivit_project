@@ -81,7 +81,7 @@ const EmpForm = () => {
     console.log('Form Data:', formData);
 
     try {
-      const response = await fetch(`${Base_url}in/api/addBenificiary`, {
+      const response = await fetch(`${Base_url}/api/addBenificiary`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
