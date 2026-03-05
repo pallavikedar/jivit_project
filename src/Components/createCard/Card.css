@@ -1,5 +1,5 @@
-.card {
-  width: 40%;
+/* .card {
+  width: 820px;
   height: 380px;
   border: 1px solid #ccc;
   overflow: hidden;
@@ -9,13 +9,16 @@
   justify-content: space-between;
   align-items: center;
   margin: 20px;
+   transform: none !important;
+  zoom: 1 !important;
 }
 
 .card-side {}
 
 .card-front {
-  width: 50%;
+  width: 45%;
   background-color: #eaeff3;
+  border: 2px solid #eaeff3;
   height: 232px;
 }
 
@@ -41,26 +44,48 @@
   flex-direction: column;
   align-items: flex-start;
   line-height: 22px;
+  z-index: 10;
+}
+p b {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
 }
 
 .info-left p {
-  font-size: 10px;
-  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+  font-size: 11px;
+  white-space: nowrap; 
+
 }
+.card-info p span {
+  flex: 2;
+  text-align: left;
+  padding-left:4px;
+  font-weight: bold;
+  white-space: nowrap;
+
+}
+
 
 .info-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  
   line-height: 22px;
   position: relative;
 }
 
 .info-right p {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
-  margin-right: 9px;
+  margin-right: 5px;
   margin-top: -4px;
+ 
 }
 
 .card-footer {
@@ -70,20 +95,27 @@
   font-size: 14px;
   color: #555;
   position: relative;
-  bottom: 83px;
+  bottom: 88px;
+   z-index: 0;
+    outline: none !important;
+    box-shadow: none !important;
 }
+
 
 .card-back {
   background-color: #CBFEFF;
-  width: 50%;
+  width: 45%;
   height: 232px;
 }
 
 .instructions ol {
   padding-left: 20px;
   text-align: left;
-  font-size: 8px;
-  line-height: 10px;
+  font-size: 10px;
+  padding-top: 1px;
+  line-height: 11px;
+  font-family: sans-serif;
+ 
 }
 
 .dependents table {
@@ -91,11 +123,12 @@
   border-collapse: collapse;
 }
 
-.dependents th,
-.dependents td {
-  border: 1px solid #ccc;
+.dependents th, .dependents td {
+  border: 1px solid #000000;
   text-align: center;
-  font-size: 10px;
+  align-items: center;
+  font-size: 9px;
+  padding: 2px;
 }
 
 .footerp {
@@ -105,91 +138,14 @@
 
 .footerp p {
   font-size: 11px;
+  color: #003196;
+  font-weight: bold;
 }
 
 .mobile-warning {
   display: none;
 }
 
-@media only screen and (min-width: 1900px) and (max-width: 2600px) {
-  .card {
-    width: 65%;
-   height: 50%;
-  }
-  .card-front {
-    width: 38%;
-    height: 300px;
-  }
-  .card-back {
-    width: 38%;
-    height: 300px;
-  }
-  .card-footer {
-    bottom: 0;
-  }
-}
-
-@media only screen and (min-width: 1550px) and (max-width: 1900px) {
-  .card {
-    width: 60%;
-  }
-  .card-front {
-    width: 50%;
-    height: 261px;
-  }
-  .card-back {
-    width: 50%;
-    height: 261px;
-  }
-  .card-footer {
-    bottom: 53px;
-  }
-}
-
-@media only screen and (min-width:1460px) and (max-width: 1550px) {
-  .card {
-    width: 65%;
-  }
-  .card-front {
-    width: 50%;
-  }
-  .card-back {
-    width: 50%;
-  }
-}
-
-@media (max-width: 1460px) {
-  .card {
-    width: 65%;
-  }
-}
-
-@media (max-width: 1340px) {
-  .card {
-    width: 70%;
-  }
-}
-
-@media (max-width: 1200px) {
-  .card {
-    width: 85%;
-  }
-}
-
-@media (max-width: 1100px) {
-  .card {
-    width: 92%;
-  }
-}
-
-@media (max-width: 960px), (max-width: 770px) {
-  .card {
-    display: none;
-  }
-  .mobile-warning {
-    display: block;
-  }
-}
 
 .print-btn {
   margin-top: 50px;
@@ -206,31 +162,214 @@
 }
 
 @media print {
-  body * {
-    visibility: hidden;
+.card-footer {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: none;
+ 
   }
-  .card {
-    display: flex !important;
-    width: 60% !important;
-    height: 261px !important;
+  .unwanted-line {
+    display: none; 
+     border: none !important;
   }
-  .card-front, .card-back {
-    width: 50% !important;
-    height: 261px !important;
-  }
-  .card-footer {
-    bottom: 53px !important;
-  }
-  .hh, .img, .img * {
-    visibility: visible;
-  }
-  .img {
+
+} */
+
+
+
+.card {
+  width: 820px;
+  height: 380px;
+  display: flex;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: hidden;
+  justify-content: space-between;
+   font-family: sans-serif;
+
+}
+
+/* FRONT */
+.card-front {
+  width: 265px;
+  height: 220px;
+  background: #eaeff3;
+  border: none;        /* ← remove border */
+  outline: 2px solid #eaeff3;  /* ← use outline instead (won't show in canvas) */
+  position: relative;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* BACK */
+.card-back {
+    width: 265px;
+  height: 220px;
+  background: #CBFEFF;
+  border: 2px solid #CBFEFF;
+  position: relative;
+}
+
+/* INFO */
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 10;
+}
+.card-info p span {
+  flex: 2;
+  text-align: left;
+  padding-left:4px;
+  font-weight: bold;
+  white-space: nowrap;
+
+}
+p b {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.info-left p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ 
+  font-size: 11px;
+  white-space: nowrap; 
+
+}
+
+
+.info-left,.info-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 10px;
+  z-index: 10;
+}
+
+.info-left p,
+.info-right p {
+  margin: 4px 0;
+  font-size: 9px;
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  /* line-height: 16px; */
+}
+
+
+.card-logo {
+    width: 133px;
+    margin-top: -4px;
+    margin-left: -18px;
+}
+
+/* FOOTER */
+.card-footer {
+  position: absolute;
+  bottom: 0;
+  width:264px;
+  height: 174px;
+  background-image: url('../../Assets/Frame_4__8_-removebg-preview.png');
+  background-size: cover;
+  
+  background-repeat: no-repeat;
+  z-index: 0;
+  border: none !important;
+}
+
+.helpline {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  .print-btn {
-    display: none;
-  }
+    right: 2px;
+    top: 99px;
+    color: white;
+    font-size: 10px;
+    z-index: 10;
+}
+
+.address {
+    position: absolute;
+    bottom: 7px;
+    width: 100%;
+    text-align: center;
+    font-size: 6.5px;
+    color: white;
+    z-index: 10;
+}
+
+/* BACK SECTION */
+.instructions {
+  /* padding: 10px; */
+  font-size: 10px;
+}
+
+.instructions h3,
+.dependents h3 {
+  background: #1587CE;
+  color: white;
+  font-size: 10px;
+  padding: 3px;
+  text-align: center;
+}
+.instructions ol {
+  counter-reset: item;
+  padding-left: 15px;
+}
+
+.instructions ol li {
+  display: block;
+  position: relative;
+  padding-left: 12px;
+  font-size: 8px;
+}
+
+.instructions ol li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* .instructions ol {
+  padding-left: 18px;
+  font-size: 9px;
+} */
+
+.dependents table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 7px;
+}
+
+.dependents th,
+.dependents td {
+  border: 1px solid #000;
+  padding: 1px;
+  text-align: center;
+}
+
+.footerp {
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #003196;
+  margin-top: 5px;
+}
+
+/* BUTTON */
+.print-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
