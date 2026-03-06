@@ -588,7 +588,7 @@ function Card() {
 const handlePrint = async () => {
      const cardFooter = printRef.current.querySelector(".card-footer");
       if (cardFooter) {
-    cardFooter.style.border = "3px solid #eaeff3";
+    cardFooter.style.border = "none";
   }
   const canvas = await html2canvas(printRef.current, {
     scale: 4,
@@ -628,7 +628,7 @@ const handlePrint = async () => {
           <div className="card-info">
             <div className="info-left">
               <p><b>CARD NO </b> <span> :<span  style={{color:"red",fontWeight:"bold",fontSize:"11px"}}>{data.cardNo}</span> </span></p>
-              <p><b>EMP NAME </b> <span>:<span style={{fontWeight:"bolder"}}> {data.fullName}</span> </span></p>
+              <p><b>EMP NAME </b> <span>:<span style={{fontSize:"9px", fontWeight:"600"}} > {data.fullName}</span> </span></p>
               <p><b>DOB </b> <span>:<span>{formatDate(data.dateOfBirth)}</span> </span></p>
               <p><b>DEPT </b> <span>:<span> {data.departmentName}</span> </span></p>
               <p><b>LOCATION </b> <span>:<span>{data.departmentLocation}</span> </span></p>
