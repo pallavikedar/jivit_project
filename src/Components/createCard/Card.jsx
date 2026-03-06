@@ -586,29 +586,38 @@ function Card() {
   }, [params.id]);
 
 const handlePrint = async () => {
-     const cardFooter = printRef.current.querySelector(".card-footer");
-      if (cardFooter) {
-    cardFooter.style.border = "none";
-  }
-  const canvas = await html2canvas(printRef.current, {
+  const cardFront = printRef.current.querySelector(".card-front");
+  const cardBack = printRef.current.querySelector(".card-back");
+
+  const canvasFront = await html2canvas(cardFront, {
     scale: 4,
     useCORS: true,
-    backgroundColor: null,
+    backgroundColor: "#eaeff3",
   });
 
-  const imgData = canvas.toDataURL("image/png");
+  const canvasBack = await html2canvas(cardBack, {
+    scale: 4,
+    useCORS: true,
+    backgroundColor: "#CBFEFF",
+  });
+
+  // Standard card size in mm (CR80 card)
+  const cardW = 88;   // mm
+  const cardH = 57;     // mm
+  const gap = 5;        // mm gap between cards
+  const totalW = cardW + gap + cardW; // 176.2mm
+  const totalH = cardH;               // 54mm
 
   const pdf = new jsPDF({
     orientation: "landscape",
-    unit: "px",
-    format: [600, 220],
+    unit: "mm",
+    format: [totalW, totalH],
   });
-  
-  pdf.addImage(imgData, "PNG", 0, 0, 600, 220);
+
+  pdf.addImage(canvasFront.toDataURL("image/png"), "PNG", 0, 0, cardW, cardH);
+  pdf.addImage(canvasBack.toDataURL("image/png"), "PNG", cardW + gap, 0, cardW, cardH);
+
   pdf.save(`${data.fullName || "Jivit_Card"}.pdf`);
-  if (cardFooter) {
-    cardFooter.style.border = "none";
-  }
 };
 
   const formatDate = (date) =>

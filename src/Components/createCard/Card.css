@@ -178,7 +178,7 @@ p b {
 
 
  
-.card {
+/* .card {
   width: 820px;
   height: 380px;
   display: flex;
@@ -188,6 +188,19 @@ p b {
   justify-content: space-between;
    font-family: "Montserrat", sans-serif;;
 
+} */
+
+.card {
+  width: 538px;
+  height: 220px;
+  display: flex;
+  gap: 8px;
+  border: none;
+  background: #fff;
+  overflow: hidden;
+  margin: 0;        /* ← ADD */
+  padding: 0;       /* ← ADD */
+  font-family: "Montserrat", sans-serif;
 }
 
 /* FRONT */
